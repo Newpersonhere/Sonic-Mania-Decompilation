@@ -5,7 +5,7 @@
 // -------------------------
 
 RSDKFunctionTable RSDK;
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
 APIFunctionTable API;
 #endif
 #if RETRO_USE_MOD_LOADER
@@ -13,7 +13,7 @@ ModFunctionTable Mod;
 
 DLLExport ModVersionInfo modInfo = { RETRO_REVISION, GAME_VERSION, RETRO_MOD_LOADER_VER };
 
-const char *modID = "SonicMania";
+const char *modID = "SonicDiscovery";
 #endif
 
 int32 RSDKRevision = RETRO_REVISION;
@@ -21,20 +21,20 @@ int32 RSDKRevision = RETRO_REVISION;
 RSDKSceneInfo *SceneInfo = NULL;
 
 RSDKGameInfo *GameInfo = NULL;
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
 RSDKSKUInfo *SKU = NULL;
 #endif
 
 RSDKControllerState *ControllerInfo = NULL;
 RSDKAnalogState *AnalogStickInfoL   = NULL; // should be called "AnalogStickInfo" for Pre-Plus but its easier to be consistent this way
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
 RSDKAnalogState *AnalogStickInfoR = NULL;
 RSDKTriggerState *TriggerInfoL    = NULL;
 RSDKTriggerState *TriggerInfoR    = NULL;
 #endif
 RSDKTouchInfo *TouchInfo = NULL;
 
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
 RSDKUnknownInfo *UnknownInfo = NULL;
 #endif
 
@@ -55,7 +55,7 @@ void GlobalVariables_InitCB(GlobalVariables *globals)
 
     globals->presenceID = -1;
 
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     globals->replayTableID = (uint16)-1;
     globals->taTableID     = (uint16)-1;
 
@@ -76,7 +76,7 @@ void InitGameLogic(void);
 void InitModAPI(void);
 #endif
 
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
 void LinkGameLogicDLL(EngineInfo *info)
 {
     memset(&API, 0, sizeof(APIFunctionTable));
@@ -150,11 +150,11 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(Acetone);
     RSDK_REGISTER_OBJECT(ActClear);
     RSDK_REGISTER_OBJECT(AIZEggRobo);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(AIZEncoreTutorial);
 #endif
     RSDK_REGISTER_OBJECT(AIZKingClaw);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(AIZRockPile);
 #endif
     RSDK_REGISTER_OBJECT(AIZSetup);
@@ -164,7 +164,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(AnimalHBH);
     RSDK_REGISTER_OBJECT(Animals);
     RSDK_REGISTER_OBJECT(Announcer);
-#if !MANIA_USE_PLUS
+#if !DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(APICallback);
 #endif
     RSDK_REGISTER_OBJECT(Aquis);
@@ -182,7 +182,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(BladePole);
     RSDK_REGISTER_OBJECT(Blaster);
     RSDK_REGISTER_OBJECT(Blastoid);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(Bloominator);
 #endif
     RSDK_REGISTER_OBJECT(Bomb);
@@ -228,7 +228,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(CollapsingSand);
     RSDK_REGISTER_OBJECT(ColorHelpers);
     RSDK_REGISTER_OBJECT(Competition);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(CompetitionMenu);
 #endif
     RSDK_REGISTER_OBJECT(CompetitionSession);
@@ -268,7 +268,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(Decoration);
     RSDK_REGISTER_OBJECT(DemoMenu);
     RSDK_REGISTER_OBJECT(DERobot);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(DialogRunner);
 #endif
     RSDK_REGISTER_OBJECT(DirectorChair);
@@ -280,7 +280,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(Drillerdroid);
     RSDK_REGISTER_OBJECT(DrillerdroidO);
     RSDK_REGISTER_OBJECT(Dust);
-#if !MANIA_USE_PLUS
+#if !DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(E3MenuSetup);
 #endif
     RSDK_REGISTER_OBJECT(EggJanken);
@@ -292,7 +292,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(EggTower);
     RSDK_REGISTER_OBJECT(EggTV);
     RSDK_REGISTER_OBJECT(ElectroMagnet);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(EncoreGoodEnd);
     RSDK_REGISTER_OBJECT(EncoreIntro);
     RSDK_REGISTER_OBJECT(EncoreRoute);
@@ -307,13 +307,13 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(ERZStart);
     RSDK_REGISTER_OBJECT(EscapeCar);
     RSDK_REGISTER_OBJECT(Explosion);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(ExtrasMenu);
 #endif
     RSDK_REGISTER_OBJECT(Fan);
     RSDK_REGISTER_OBJECT(FarPlane);
     RSDK_REGISTER_OBJECT(FBZ1Outro);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(FBZ2Outro);
 #endif
     RSDK_REGISTER_OBJECT(FBZFan);
@@ -322,7 +322,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(FBZSinkTrash);
     RSDK_REGISTER_OBJECT(FBZStorm);
     RSDK_REGISTER_OBJECT(FBZTrash);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(FernParallax);
 #endif
     RSDK_REGISTER_OBJECT(FilmProjector);
@@ -347,12 +347,12 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(FXRuby);
     RSDK_REGISTER_OBJECT(FXSpinRay);
     RSDK_REGISTER_OBJECT(FXTrail);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(FXWaveRing);
 #endif
     RSDK_REGISTER_OBJECT(Gachapandora);
     RSDK_REGISTER_OBJECT(GameOver);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_STATIC_VARIABLES(GameProgress);
 #else
     RSDK_REGISTER_OBJECT(GameProgress);
@@ -364,7 +364,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(GHZCutsceneST);
     RSDK_REGISTER_OBJECT(GHZSetup);
     RSDK_REGISTER_OBJECT(GiantPistol);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(GigaMetal);
 #endif
     RSDK_REGISTER_OBJECT(Gondola);
@@ -373,7 +373,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(GymBar);
     RSDK_REGISTER_OBJECT(HandLauncher);
     RSDK_REGISTER_OBJECT(HangConveyor);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(HangGlider);
 #endif
     RSDK_REGISTER_OBJECT(HangPoint);
@@ -433,14 +433,14 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(LottoBall);
     RSDK_REGISTER_OBJECT(LottoMachine);
     RSDK_REGISTER_OBJECT(LoveTester);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(LRZ1Intro);
 #endif
     RSDK_REGISTER_OBJECT(LRZ1Outro);
     RSDK_REGISTER_OBJECT(LRZ1Setup);
     RSDK_REGISTER_OBJECT(LRZ2Setup);
     RSDK_REGISTER_OBJECT(LRZ3Cutscene);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(LRZ3Outro);
 #endif
     RSDK_REGISTER_OBJECT(LRZ3OutroK);
@@ -457,9 +457,9 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(MagnetSphere);
     RSDK_REGISTER_OBJECT(MagPlatform);
     RSDK_REGISTER_OBJECT(MagSpikeBall);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(MainMenu);
-    RSDK_REGISTER_OBJECT(ManiaModeMenu);
+    RSDK_REGISTER_OBJECT(DiscoveryModeMenu);
 #endif
     RSDK_REGISTER_OBJECT(MathHelpers);
     RSDK_REGISTER_OBJECT(MatryoshkaBom);
@@ -473,19 +473,19 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(MeterDroid);
     RSDK_REGISTER_OBJECT(MicDrop);
     RSDK_REGISTER_OBJECT(Mine);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(MMZ2Outro);
     RSDK_REGISTER_OBJECT(MMZLightning);
 #endif
     RSDK_REGISTER_OBJECT(MMZSetup);
     RSDK_REGISTER_OBJECT(MMZWheel);
     RSDK_REGISTER_OBJECT(MonarchBG);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(MonarchPlans);
 #endif
     RSDK_REGISTER_OBJECT(MonkeyDude);
     RSDK_REGISTER_OBJECT(Motobug);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(MSBomb);
 #endif
     RSDK_REGISTER_OBJECT(MSFactory);
@@ -501,18 +501,18 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(Music);
     RSDK_REGISTER_OBJECT(Newspaper);
     RSDK_REGISTER_OBJECT(Newtron);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(NoSwap);
 #endif
     RSDK_REGISTER_OBJECT(Octus);
     RSDK_REGISTER_OBJECT(OneWayDoor);
     RSDK_REGISTER_OBJECT(OOZ1Outro);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(OOZ2Outro);
 #endif
     RSDK_REGISTER_OBJECT(OOZFlames);
     RSDK_REGISTER_OBJECT(OOZSetup);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_STATIC_VARIABLES(Options);
     RSDK_REGISTER_OBJECT(OptionsMenu);
 #else
@@ -521,7 +521,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(Orbinaut);
     RSDK_REGISTER_OBJECT(OrbitSpike);
     RSDK_REGISTER_OBJECT(PaintingEyes);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(Palette);
 #endif
     RSDK_REGISTER_OBJECT(PaperRoller);
@@ -529,7 +529,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(ParticleHelpers);
     RSDK_REGISTER_OBJECT(PathInverter);
     RSDK_REGISTER_OBJECT(PauseMenu);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(PBL_Bumper);
     RSDK_REGISTER_OBJECT(PBL_Camera);
     RSDK_REGISTER_OBJECT(PBL_Crane);
@@ -575,7 +575,7 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(Projectile);
     RSDK_REGISTER_OBJECT(Propeller);
     RSDK_REGISTER_OBJECT(PropellerShaft);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(PSZ1Intro);
 #endif
     RSDK_REGISTER_OBJECT(PSZ1Setup);
@@ -600,12 +600,12 @@ void InitGameLogic(void)
     RSDK_REGISTER_OBJECT(Rattlekiller);
     RSDK_REGISTER_OBJECT(Reagent);
     RSDK_REGISTER_OBJECT(Redz);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(ReplayDB);
     RSDK_REGISTER_OBJECT(ReplayRecorder);
 #endif
     RSDK_REGISTER_OBJECT(Rexon);
-#if MANIA_USE_PLUS
+#if DISCOVERY_USE_PLUS
     RSDK_REGISTER_OBJECT(Rhinobot);
 #endif
     RSDK_REGISTER_OBJECT(Ring);
