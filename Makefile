@@ -8,7 +8,7 @@ DEBUG		?= 1
 VERBOSE		?= 0
 PROFILE		?= 0
 
-GAME_NAME   ?= SonicMania
+GAME_NAME   ?= SonicDiscovery
 GAME_SUFFIX ?= .so
 GAME_ALLC   ?= 1
 
