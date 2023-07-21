@@ -13,7 +13,7 @@ ModFunctionTable Mod;
 
 DLLExport ModVersionInfo modInfo = { RETRO_REVISION, GAME_VERSION, RETRO_MOD_LOADER_VER };
 
-const char *modID = "SonicMania";
+const char *modID = "SonicDiscovery";
 #endif
 
 int32 RSDKRevision = RETRO_REVISION;
