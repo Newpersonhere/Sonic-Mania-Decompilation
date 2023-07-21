@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(SonicMania)
+project(SonicDiscovery)
 
 option(WITH_RSDK "Whether or not to build with RSDKv5. Defalts to true" ON)
 
@@ -29,7 +29,7 @@ else()
     set(GAME_VERSION 3 CACHE STRING "The game version to use. Defaults to 3 == Last pre-plus release")
 endif()
 
-set(GAME_NAME "SonicMania" CACHE STRING "The game directory to look into")
+set(GAME_NAME "SonicDiscovery" CACHE STRING "The game directory to look into")
 set(GAME_OUTPUT_NAME "Game" CACHE STRING "The name of the built library")
 
 option(GAME_INCLUDE_EDITOR "Whether or not to include editor functions. Defaults to true" ON)
